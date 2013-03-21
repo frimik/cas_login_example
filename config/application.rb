@@ -58,5 +58,9 @@ module CasLogin
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    CASClient::Frameworks::Rails::Filter.configure(
+      :cas_base_url => ENV['cas_server']
+    )
   end
 end
